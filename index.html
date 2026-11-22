@@ -124,6 +124,20 @@
       .links a { padding: 14px 24px; border-top: 1px solid var(--line); }
     }
 
+    /* Career counselling */
+    .counsel-intro { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; margin-bottom: 36px; }
+    .counsel-intro p { color: var(--muted); font-size: 1.05rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .stat { text-align: center; padding: 20px 12px; }
+    .stat b { display: block; white-space: nowrap; font-family: "Fraunces", serif; font-size: 1.7rem; color: var(--accent); }
+    .stat span { font-size: 0.82rem; color: var(--muted); }
+    .services { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+    .service .icon { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 14px; background: linear-gradient(135deg, var(--accent-soft), #f8e2d6); }
+    .service h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .service p { color: var(--muted); font-size: 0.92rem; }
+    .counsel-cta { margin-top: 28px; text-align: center; }
+    @media (max-width: 860px) { .counsel-intro { grid-template-columns: 1fr; } }
+
     /* ===== Eye-catching layer ===== */
     @property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
     #bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
@@ -183,6 +197,7 @@
         <a href="#skills">Skills</a>
         <a href="#certifications">Certifications</a>
         <a href="#projects">Projects</a>
+        <a href="#counselling">Counselling</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -218,7 +233,7 @@
             <li><span>College</span><span>Chitwan College of Technology</span></li>
             <li><span>Location</span><span>Nepal</span></li>
             <li><span>Email</span><span>sindushah99@gmail.com</span></li>
-            <li><span>Open to</span><span>Jobs &amp; internships</span></li>
+            <li><span>Open to</span><span>Jobs, internships &amp; counselling</span></li>
           </ul>
         </div>
       </div>
@@ -269,7 +284,7 @@
             <h3>Creative &amp; Soft</h3>
             <div class="tags">
               <span class="tag">Bridal &amp; party makeup</span><span class="tag">Color theory</span>
-              <span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Client care</span>
+              <span class="tag">Career guidance</span><span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Client care</span>
             </div>
           </div>
         </div>
@@ -322,6 +337,11 @@
           <div class="certs">
             <div class="card cert featured">
               <div class="year">2025</div>
+              <h4>Career Counselling &amp; Guidance</h4>
+              <p>Career assessment, goal setting, CV &amp; interview coaching and one-on-one guidance techniques.</p>
+            </div>
+            <div class="card cert featured">
+              <div class="year">2025</div>
               <h4>Advanced Professional Makeup Course</h4>
               <p>Bridal, party and editorial looks; skin prep, contouring, color correction and hygiene standards.</p>
             </div>
@@ -359,12 +379,60 @@
       </div>
     </section>
 
+    <!-- Career Counselling -->
+    <section id="counselling">
+      <div class="wrap">
+        <div class="sec-head"><span class="num">06</span><h2>Career <span class="grad">Counselling</span></h2></div>
+        <div class="counsel-intro">
+          <p>Having been through the BCA journey myself, I help students and fresh graduates find direction — from choosing the right course to landing a first job. Friendly, practical, one-on-one guidance built around your strengths and goals.</p>
+          <div class="stats">
+            <div class="card stat"><b>1:1</b><span>Personal sessions</span></div>
+            <div class="card stat"><b>+2/BCA</b><span>Students &amp; grads</span></div>
+            <div class="card stat"><b>IT</b><span>&amp; creative careers</span></div>
+          </div>
+        </div>
+        <div class="services">
+          <div class="card service">
+            <div class="icon">🎯</div>
+            <h3>Career Path Planning</h3>
+            <p>Discover your interests and strengths and map them to realistic career options in IT, design, marketing and beyond.</p>
+          </div>
+          <div class="card service">
+            <div class="icon">🎓</div>
+            <h3>Course &amp; College Selection</h3>
+            <p>Guidance for +2 students choosing between BCA, BIT, BSc CSIT and other programs, and picking the right college.</p>
+          </div>
+          <div class="card service">
+            <div class="icon">📄</div>
+            <h3>CV &amp; Portfolio Review</h3>
+            <p>Build a clean, ATS-friendly CV and a portfolio that shows your work the right way.</p>
+          </div>
+          <div class="card service">
+            <div class="icon">💬</div>
+            <h3>Interview Preparation</h3>
+            <p>Mock interviews, common questions and confidence-building for internships and first jobs.</p>
+          </div>
+          <div class="card service">
+            <div class="icon">🚀</div>
+            <h3>Skill Roadmaps</h3>
+            <p>Step-by-step learning plans for web development, UI/UX and digital marketing with free resources.</p>
+          </div>
+          <div class="card service">
+            <div class="icon">🤝</div>
+            <h3>Freelancing &amp; Internships</h3>
+            <p>How to find internships, start freelancing and build experience while still studying.</p>
+          </div>
+        </div>
+        <div class="counsel-cta"><a href="mailto:sindushah99@gmail.com?subject=Career%20Counselling%20Session" class="btn btn-primary">Book a counselling session</a></div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="contact">
       <div class="wrap">
-        <div class="sec-head"><span class="num">06</span></div>
+        <div class="sec-head"><span class="num">07</span></div>
         <h2>Let's work together</h2>
-        <p>Open to entry-level roles, internships and makeup bookings. The fastest way to reach me is email.</p>
+        <p>Open to entry-level roles, internships, career counselling sessions and makeup bookings. The fastest way to reach me is email.</p>
         <a class="mail" href="mailto:sindushah99@gmail.com">sindushah99@gmail.com</a>
       </div>
     </section>
@@ -441,7 +509,7 @@
 
     // Typing effect
     (() => {
-      const roles = ['Web Developer', 'UI/UX Designer', 'Digital Marketer', 'Makeup Artist'];
+      const roles = ['Web Developer', 'UI/UX Designer', 'Digital Marketer', 'Career Counsellor', 'Makeup Artist'];
       const el = document.getElementById('typed'); let r = 0, i = 0, del = false;
       (function tick() {
         const w = roles[r]; el.textContent = w.slice(0, i);
