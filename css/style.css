@@ -249,12 +249,31 @@ section { position: relative; padding: var(--space-section) 0; }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .btn-light { background: #fff; color: #1a0f14; }
 .btn-light:hover { transform: translateY(-2px); background: #ffe6ee; }
-.btn-ghost-light { border-color: rgba(255, 255, 255, .35); color: #fff; }
+.btn-ghost-light { border-color: rgba(255, 255, 255, .35); color: #fff; background: rgba(255, 255, 255, .06); }
 .btn-ghost-light:hover { border-color: #fff; transform: translateY(-2px); }
 
 footer { padding: 36px 0; font-size: var(--fs-sm); color: var(--muted); }
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 footer a:hover { color: var(--accent); }
+
+/* ================= Social links ================= */
+.social { display: flex; flex-wrap: wrap; gap: 10px; }
+.social a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: transform .2s, background .2s, border-color .2s, color .2s; }
+.social svg { width: 18px; height: 18px; flex-shrink: 0; }
+.social a:hover { transform: translateY(-2px); }
+.social-icons a { width: 38px; height: 38px; border-radius: 11px; border: 1px solid var(--line); background: var(--surface-solid); color: var(--muted); }
+.social-icons a:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
+.profile-body .social-icons { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.social-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .18); }
+.social-label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .65); }
+.social-pills a { padding: 10px 18px; border-radius: 999px; font-size: var(--fs-sm); font-weight: 600; color: #fff; border: 1px solid rgba(255, 255, 255, .3); background: rgba(255, 255, 255, .06); backdrop-filter: blur(6px); }
+.social-pills a:hover { background: #fff; color: #1a0f14; border-color: #fff; }
+footer .wrap { align-items: center; }
+@media (max-width: 600px) {
+  .social-pills { width: 100%; }
+  .social-pills a { flex: 1 1 0; padding: 10px 12px; }
+  footer .wrap { flex-direction: column; text-align: center; }
+}
 
 /* Reveal */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .8, .2, 1); }
