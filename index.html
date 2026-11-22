@@ -6,6 +6,9 @@
   <title>Sindu Shah — Web Developer, UI/UX Designer & Career Counsellor</title>
   <meta name="description" content="Sindu Shah — web development, UI/UX design, digital marketing, career counselling and professional makeup artistry." />
   <meta name="theme-color" content="#faf7f5" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <script src="js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,8 +54,9 @@
             <span class="line"><span>Sindu</span></span>
             <span class="line"><span><em>Shah</em></span></span>
           </h1>
+          <p class="slogan">Code with clarity. Design with heart. <em>Guide with purpose.</em></p>
           <div class="roles"><span>Web Developer</span><span>UI/UX Designer</span><span>Career Counsellor</span></div>
-          <p class="lede">I build clean, user-focused digital experiences and help people and brands grow through <span class="swap" id="swap">thoughtful design</span>.</p>
+          <p class="lede">I blend clean code, user-centred design and smart digital marketing to create experiences people love to use, and I guide students toward careers they're proud of.</p>
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">View my work
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -68,10 +72,14 @@
 
         <aside class="profile reveal">
           <div class="profile-card">
-            <div class="photo">
-              <span class="initials">SS</span>
-              <!-- Add her photo: save it as sindu.jpg in this folder and uncomment the line below -->
-              <!-- <img src="sindu.jpg" alt="Sindu Shah" /> -->
+            <div class="photo carousel" id="carousel" aria-roledescription="carousel" aria-label="Photos of Sindu Shah">
+              <span class="initials" aria-hidden="true">SS</span>
+              <!-- To add more photos: put them in images/ and add another <img class="slide"> below -->
+              <img class="slide active" src="images/sindu-1.jpg" alt="Sindu Shah in an embroidered pastel kurta" style="--pos: 42% 28%" />
+              <img class="slide" src="images/sindu-2.jpg" alt="Sindu Shah lighting diyas at the festival of lights" style="--pos: 50% 38%" loading="lazy" />
+              <button class="car-btn prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button class="car-btn next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              <div class="car-dots" role="tablist"></div>
             </div>
             <div class="profile-body">
               <h3>Sindu Shah</h3>
@@ -266,12 +274,14 @@
           <span class="label">07 · Contact</span>
           <h2>Have a project, a role or a question? <em>Let's talk.</em></h2>
           <p>Open to entry-level roles, internships, freelance work, career counselling sessions and makeup bookings. Email is the fastest way to reach me.</p>
-          <a class="mail" href="mailto:sindushah99@gmail.com">sindushah99@gmail.com
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
-          </a>
+          <div class="mail-row">
+            <a class="mail" href="mailto:sindushah99@gmail.com">sindushah99@gmail.com
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </a>
+            <button class="copy-btn" id="copyEmail" type="button" aria-label="Copy email address" data-tip="Copy"><svg class="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></button>
+          </div>
           <div class="contact-actions">
             <a href="mailto:sindushah99@gmail.com" class="btn btn-light">Send an email</a>
-            <button class="btn btn-outline btn-ghost-light" id="copyEmail" type="button">Copy email address</button>
           </div>
           <div class="social-wrap">
             <span class="social-label">Follow along</span>

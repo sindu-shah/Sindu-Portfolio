@@ -38,15 +38,36 @@ function onScroll() {
 }
 addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-// ---------- Rotating word ----------
+// ---------- Photo carousel ----------
 (() => {
-  const words = ['thoughtful design', 'clean code', 'honest guidance', 'smart marketing', 'creative artistry'];
-  const el = $('#swap'); let i = 0;
-  if (reduce) return;
-  setInterval(() => {
-    el.classList.add('out');
-    setTimeout(() => { i = (i + 1) % words.length; el.textContent = words[i]; el.classList.remove('out'); }, 350);
-  }, 2600);
+  const car = $('#carousel'); if (!car) return;
+  const slides = $$('.slide', car), dotsWrap = $('.car-dots', car);
+  if (slides.length < 2) { $$('.car-btn', car).forEach(b => b.remove()); return; }
+  let i = 0, timer;
+  const dots = slides.map((_, k) => {
+    const d = document.createElement('button');
+    d.type = 'button'; d.className = 'car-dot'; d.setAttribute('aria-label', `Show photo ${k + 1}`);
+    d.addEventListener('click', () => { go(k); restart(); });
+    dotsWrap.appendChild(d); return d;
+  });
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    dots.forEach((d, k) => { d.classList.toggle('on', k === i); d.setAttribute('aria-current', k === i); });
+  }
+  function restart() { clearInterval(timer); if (!reduce) timer = setInterval(() => go(i + 1), 4500); }
+  $('.prev', car).addEventListener('click', () => { go(i - 1); restart(); });
+  $('.next', car).addEventListener('click', () => { go(i + 1); restart(); });
+  car.addEventListener('mouseenter', () => clearInterval(timer));
+  car.addEventListener('mouseleave', restart);
+  let sx = null;
+  car.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  car.addEventListener('touchend', e => {
+    if (sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); restart(); }
+  });
+  go(0); restart();
 })();
 
 // ---------- Silk flow-field background (hero) ----------
@@ -150,8 +171,12 @@ $$('.filter').forEach(btn => btn.addEventListener('click', () => {
 
 // ---------- Copy email ----------
 $('#copyEmail').addEventListener('click', async e => {
-  const b = e.currentTarget;
-  try { await navigator.clipboard.writeText('sindushah99@gmail.com'); b.textContent = 'Copied ✓'; }
-  catch { b.textContent = 'sindushah99@gmail.com'; }
-  setTimeout(() => b.textContent = 'Copy email address', 2000);
+  const b = e.currentTarget, email = 'sindushah99@gmail.com';
+  try { await navigator.clipboard.writeText(email); }
+  catch {
+    const t = document.createElement('textarea'); t.value = email; document.body.appendChild(t);
+    t.select(); try { document.execCommand('copy'); } catch (_) {} t.remove();
+  }
+  b.classList.add('copied'); b.dataset.tip = 'Copied!';
+  clearTimeout(b._t); b._t = setTimeout(() => { b.classList.remove('copied'); b.dataset.tip = 'Copy'; }, 1800);
 });
